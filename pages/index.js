@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/Navbar";
-import { Box, Divider, Heading, Image, Flex } from "@chakra-ui/react";
+import { Box, Divider, Heading, Image, Flex, Text } from "@chakra-ui/react";
 import { CommonButton } from "@/components/CommonButton";
 import { BlackSection } from "@/components/BlackSection";
 
@@ -55,6 +55,26 @@ const Home = () => {
         </Box>
       </Flex>
       <BlackSection cardCount={4} />
+      <Box bg="white" paddingTop={{ base: "50px", md: "100px", lg: "150px" }}>
+        <Box
+          mx={globalPageStyles.mx}
+          maxW={globalPageStyles.maxW}
+          w={globalPageStyles.w}
+          padding="50px">
+          <Text
+            fontSize={{ base: "md", md: "xl", lg: "2xl" }}
+            fontWeight="400"
+            fontFamily="Arial"
+            align="center">
+            “Trusted Habbits gloves embody excellence, setting a new standard in
+            hand safety. Engineered for superior protection and comfort, they
+            empower you with confidence in every task. Trusted by professionals,
+            our gloves redefine habits, providing unmatched security. Elevate
+            your safety with Trusted Habbits – where protection meets
+            excellence, trusted by many.”
+          </Text>
+        </Box>
+      </Box>
     </Flex>
   );
 };
