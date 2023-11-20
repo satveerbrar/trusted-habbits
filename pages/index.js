@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Box, Divider, Heading, Image, Flex } from "@chakra-ui/react";
 import { CommonButton } from "@/components/CommonButton";
+import { BlackSection } from "@/components/BlackSection";
 
 const Home = () => {
   const globalPageStyles = {
@@ -11,7 +12,7 @@ const Home = () => {
   };
 
   return (
-    <Flex direction="column" bg={globalPageStyles.bg} height="100vh">
+    <Flex direction="column" bg={globalPageStyles.bg} height="auto">
       <Navbar {...globalPageStyles} />
       <Divider orientation="horizontal" borderColor="black" w="100%" />
       <Flex
@@ -53,6 +54,7 @@ const Home = () => {
           />
         </Box>
       </Flex>
+      <BlackSection cardCount={4} />
     </Flex>
   );
 };
