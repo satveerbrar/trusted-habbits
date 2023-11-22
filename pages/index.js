@@ -7,6 +7,7 @@ import {
   Flex,
   Grid,
   GridItem,
+  Text,
 } from "@chakra-ui/react";
 import { CommonButton } from "@/components/CommonButton";
 import { BlackSection } from "@/components/BlackSection";
@@ -94,8 +95,8 @@ const Home = () => {
           </Heading>
           <CommonButton
             text="SHOP NOW"
-            bg="#BD7C0A"
-            w={{ base: "150px", sm: "150px", md: "180px", lg: "300px" }} // Reduced button size for tablet view
+            bg="#0f6357"
+            w={{ base: "150px", sm: "150px", md: "180px", lg: "220px" }} // Reduced button size for tablet view
             h="58px"
             fontWeight="bold"
             fontSize={{ base: "20px", sm: "20px", md: "25px", lg: "32px" }} // Reduced font size for tablet view
@@ -159,6 +160,37 @@ const Home = () => {
         </Box>
       </Box>
 
+      {/* Try sample section */}
+      <Box bg="black">
+        <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w} my="80px">
+          <Flex direction="row">
+            <Flex direction="column">
+              <Heading
+                color="white"
+                fontWeight="500"
+                fontSize={{ base: "20px", md: "30px" }}
+                mb="20px">
+                Have any doubts? Order a glove sample before finalizing your
+                purchase decision
+              </Heading>
+              <Text color="white">✓ Free Sample ✓ Free Delivery</Text>
+            </Flex>
+            <Flex direction="row">
+              <CommonButton
+                text="Try it!"
+                bg="#007665"
+                w="150px"
+                h="58px"
+                fontWeight="regular"
+                fontSize="18px"
+                mt="10px"
+              />
+            </Flex>
+          </Flex>
+        </Box>
+      </Box>
+
+      {/* Footer Section */}
       <Box as="footer">
         <Footer />
       </Box>
