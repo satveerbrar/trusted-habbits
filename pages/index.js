@@ -1,8 +1,17 @@
 import { Navbar } from "@/components/Navbar";
-import { Box, Divider, Heading, Image, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Heading,
+  Image,
+  Flex,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 import { CommonButton } from "@/components/CommonButton";
 import { BlackSection } from "@/components/BlackSection";
 import { Footer } from "@/components/Footer";
+import { InfoCard } from "@/components/InfoCard";
 
 const Home = () => {
   const globalPageStyles = {
@@ -14,6 +23,51 @@ const Home = () => {
   };
 
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+
+  const chooseUsInfo = [
+    {
+      number: "01",
+      title: "Durable Resilience",
+      description:
+        "Our gloves are crafted with top-tier materials, ensuring long-lasting durability to withstand the rigors of any task.",
+      color: "#F3F4F6",
+    },
+    {
+      number: "02",
+      title: "Precision Fit Technology",
+      description:
+        "Enjoy a glove that feels like a second skin. Our Precision Fit Technology ensures a snug and comfortable fit",
+      color: "white",
+    },
+    {
+      number: "03",
+      title: "Weather-Defying Performance",
+      description:
+        "Conquer the elements with gloves designed to defy weather extremes. Our weather-resistant materials provide optimal protection.",
+      color: "#F3F4F6",
+    },
+    {
+      number: "04",
+      title: "Breathable Comfort",
+      description:
+        "Experience a new level of comfort with our breathable gloves. Engineered with ventilation channels, they allow airflow to keep your hands cool and comfortable.",
+      color: "white",
+    },
+    {
+      number: "05",
+      title: "Touchscreen Compatibility",
+      description:
+        "Stay connected without removing your gloves. Our touchscreen-compatible design enables you to use smartphones and tablets effortlessly.",
+      color: "#F3F4F6",
+    },
+    {
+      number: "06",
+      title: "Stylish Versatility",
+      description:
+        "Our gloves seamlessly blend fashion and function, offering a versatile accessory that complements any attire.",
+      color: "white",
+    },
+  ];
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -59,7 +113,7 @@ const Home = () => {
         </Box>
       </Flex>
       <BlackSection cardCount={4} globalPageStyles={globalPageStyles} />
-      <Box bg="white" paddingTop={{ base: "50px", md: "100px", lg: "150px" }}>
+      {/* <Box bg="white" paddingTop={{ base: "50px", md: "100px", lg: "150px" }}>
         <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w} padding="50px">
           <Text
             fontSize={{ base: "md", md: "xl", lg: "2xl" }}
@@ -74,8 +128,40 @@ const Home = () => {
             excellence, trusted by many.”
           </Text>
         </Box>
+      </Box> */}
+
+      {/* Choose us Section */}
+      <Box bg="white">
+        <Box
+          mx={mx}
+          maxW={{ base: maxWbase, lg: maxWlg }}
+          w={w}
+          mt="180px"
+          mb="20px">
+          <Heading
+            as="h2"
+            fontSize="40px"
+            align="center"
+            marginY="30px"
+            fontWeight="600"
+            color="black">
+            Why Choose Us
+          </Heading>
+          <Grid
+            templateColumns={{ base: "repeat(6, 1fr)", md: "repeat(3, 1fr)" }}
+            gap={4}>
+            {chooseUsInfo.map((info) => (
+              <GridItem key={info.number} colSpan={{ base: 6, md: 1 }}>
+                <InfoCard {...info} />
+              </GridItem>
+            ))}
+          </Grid>
+        </Box>
       </Box>
-      <Footer />
+
+      <Box as="footer">
+        <Footer />
+      </Box>
     </Flex>
   );
 };
