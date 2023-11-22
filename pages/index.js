@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/Navbar";
 import {
   Box,
   Divider,
@@ -8,22 +7,34 @@ import {
   Grid,
   GridItem,
   Text,
+  HStack,
+  Link,
+  Icon,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+
+import { FaEye } from "react-icons/fa";
+
+import { Navbar } from "@/components/Navbar";
 import { CommonButton } from "@/components/CommonButton";
 import { BlackSection } from "@/components/BlackSection";
 import { Footer } from "@/components/Footer";
 import { InfoCard } from "@/components/InfoCard";
+import { Review } from "@/components/Review";
 
 const Home = () => {
   const globalPageStyles = {
     bg: "#D9D9D9",
     mx: "auto",
-    maxWbase: "80%",
+    maxWbase: "90%",
     maxWlg: "65%",
     w: "100%",
   };
 
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+
+  const visibleReviews =
+    useBreakpointValue({ base: 2, md: 3, lg: 4 }) || reviewsData.length;
 
   const chooseUsInfo = [
     {
@@ -67,6 +78,49 @@ const Home = () => {
       description:
         "Our gloves seamlessly blend fashion and function, offering a versatile accessory that complements any attire.",
       color: "white",
+    },
+  ];
+
+  const reviewsData = [
+    {
+      name: "John Doe",
+      rating: 4,
+      comment:
+        "Great product! Highly recommended. Quality exceeded expectations. Will buy again.",
+      avatarUrl: "avatar-1.jpg",
+      postedOn: "15/02/2022",
+    },
+    {
+      name: "Jane Smith",
+      rating: 5,
+      comment:
+        "Excellent service and fast delivery. Impressed with the packaging. A delightful shopping experience.",
+      avatarUrl: "avatar-2.jpg",
+      postedOn: "10/02/2022",
+    },
+    {
+      name: "Bob Johnson",
+      rating: 4,
+      comment:
+        "Good product, could be better. Sturdy build, minor improvements possible. Overall satisfied.",
+      avatarUrl: "avatar-3.jpg",
+      postedOn: "25/05/2022",
+    },
+    {
+      name: "Alice Williams",
+      rating: 5,
+      comment:
+        "Absolutely fantastic! Love it. Exceeded my expectations. Beautiful design and excellent performance.",
+      avatarUrl: "avatar-4.jpg",
+      postedOn: "19/02/2023",
+    },
+    {
+      name: "Charlie Brown",
+      rating: 4,
+      comment:
+        "Good value for the price. Reliable performance. Recommended for budget-conscious buyers.",
+      avatarUrl: "avatar-5.jpg",
+      postedOn: "13/08/2023",
     },
   ];
 
@@ -149,10 +203,14 @@ const Home = () => {
             Why Choose Us
           </Heading>
           <Grid
-            templateColumns={{ base: "repeat(6, 1fr)", md: "repeat(3, 1fr)" }}
+            templateColumns={{
+              base: "repeat(6, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
+            }}
             gap={4}>
             {chooseUsInfo.map((info) => (
-              <GridItem key={info.number} colSpan={{ base: 6, md: 1 }}>
+              <GridItem key={info.number} colSpan={{ base: 6, md: 1, lg: 1 }}>
                 <InfoCard {...info} />
               </GridItem>
             ))}
@@ -187,6 +245,46 @@ const Home = () => {
               />
             </Flex>
           </Flex>
+        </Box>
+      </Box>
+
+      {/* Reviews Section */}
+
+      <Box bg="white">
+        <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w} align="center">
+          <Heading as="h2" size="xl" my="20px">
+            Customer Reviews
+          </Heading>
+          <HStack align="start" spacing={4} justifyContent="center">
+            {reviewsData.slice(0, visibleReviews).map((review, index) => (
+              <Review key={index} {...review} />
+            ))}
+          </HStack>
+
+          <Box my="15px">
+            <Icon as={FaEye} mr="5px" paddingTop="5px" />
+            <Link
+              mr="5px"
+              href="/reviews"
+              textDecoration="underline"
+              display="inline-block"
+              _hover={{ color: "blue.500" }}>
+              <Text fontSize="md" fontWeight="regular" align="center">
+                See All Reviews
+              </Text>
+            </Link>
+
+            <Link
+              href="/newreview"
+              textDecoration="underline"
+              display="inline-block"
+              ml={2}
+              _hover={{ color: "blue.500" }}>
+              <Text fontSize="md" fontWeight="regular" align="center">
+                Post a review
+              </Text>
+            </Link>
+          </Box>
         </Box>
       </Box>
 
