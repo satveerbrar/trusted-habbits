@@ -5,14 +5,14 @@ import {
   HStack,
   Spacer,
   Icon,
-  Image,
   Box,
   VStack,
 } from "@chakra-ui/react";
 import { CommonButton } from "@/components/CommonButton";
 import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import { Logo } from "./Logo";
 
-export const Navbar = ({ bg, mx, maxW, w }) => {
+export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -27,13 +27,9 @@ export const Navbar = ({ bg, mx, maxW, w }) => {
       paddingY="5"
       color="black"
       mx={mx}
-      maxW={maxW}
+      maxW={{ base: maxWbase, lg: maxWlg }}
       w={w}>
-      <Link href="/">
-        <Box>
-          <Image src="/images/logo.svg" alt="logo" />
-        </Box>
-      </Link>
+      <Logo />
       <Spacer />
       <Spacer />
       <Spacer />

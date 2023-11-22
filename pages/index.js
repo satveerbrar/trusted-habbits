@@ -2,23 +2,27 @@ import { Navbar } from "@/components/Navbar";
 import { Box, Divider, Heading, Image, Flex, Text } from "@chakra-ui/react";
 import { CommonButton } from "@/components/CommonButton";
 import { BlackSection } from "@/components/BlackSection";
+import { Footer } from "@/components/Footer";
 
 const Home = () => {
   const globalPageStyles = {
     bg: "#D9D9D9",
     mx: "auto",
-    maxW: "90%",
+    maxWbase: "80%",
+    maxWlg: "65%",
     w: "100%",
   };
 
+  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+
   return (
-    <Flex direction="column" bg={globalPageStyles.bg} height="auto">
+    <Flex direction="column" bg={bg} height="auto">
       <Navbar {...globalPageStyles} />
       <Divider orientation="horizontal" borderColor="black" w="100%" />
       <Flex
-        mx={globalPageStyles.mx}
-        maxW={globalPageStyles.maxW}
-        w={globalPageStyles.w}
+        mx={mx}
+        maxW={{ base: maxWbase, lg: maxWlg }}
+        w={w}
         flex="1"
         mt="80px">
         <Flex direction="column" width={{ base: "80%", md: "50%" }}>
@@ -54,13 +58,9 @@ const Home = () => {
           />
         </Box>
       </Flex>
-      <BlackSection cardCount={4} />
+      <BlackSection cardCount={4} globalPageStyles={globalPageStyles} />
       <Box bg="white" paddingTop={{ base: "50px", md: "100px", lg: "150px" }}>
-        <Box
-          mx={globalPageStyles.mx}
-          maxW={globalPageStyles.maxW}
-          w={globalPageStyles.w}
-          padding="50px">
+        <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w} padding="50px">
           <Text
             fontSize={{ base: "md", md: "xl", lg: "2xl" }}
             fontWeight="400"
