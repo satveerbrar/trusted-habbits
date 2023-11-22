@@ -75,6 +75,7 @@ const Home = () => {
           </Text>
         </Box>
       </Box>
+      <Footer />
     </Flex>
   );
 };
