@@ -54,7 +54,7 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
           p={4}>
           <Link href="/home">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
+          <Link href="/products">Products</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/login">Login</Link>
           <Link href="/contact">
@@ -70,7 +70,7 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
         fontWeight="medium">
         <Link href="/home">Home</Link>
         <Link href="/about">About</Link>
-        <Link href="/services">Services</Link>
+        <Link href="/products">Products</Link>
         <Link href="/contact">Contact</Link>
       </HStack>
       <Spacer />
