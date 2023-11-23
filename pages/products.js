@@ -3,6 +3,7 @@ import { Flex, Box, Divider } from "@chakra-ui/react";
 import { Navbar } from "@/components/Navbar";
 import { Product } from "@/components/Product";
 import { Footer } from "@/components/Footer";
+import { Sidebar } from "@/components/Sidebar";
 
 const products = () => {
   const globalPageStyles = {
@@ -103,6 +104,7 @@ const products = () => {
             w={w}
             display="flex"
             flexDirection="row">
+            <Sidebar />
             <Box
               p="100px"
               display="flex"
