@@ -16,6 +16,7 @@ import {
   FaFacebook,
   FaCopyright,
 } from "react-icons/fa";
+
 import { Logo } from "./Logo";
 
 export const Footer = () => {

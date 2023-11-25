@@ -21,108 +21,14 @@ import { BlackSection } from "@/components/BlackSection";
 import { Footer } from "@/components/Footer";
 import { InfoCard } from "@/components/InfoCard";
 import { Review } from "@/components/Review";
+import { chooseUsInfo, globalPageStyles } from "@/utils/staticData";
+import { tempReviewsData } from "@/utils/temporary";
 
 const Home = () => {
-  const globalPageStyles = {
-    bg: "#D9D9D9",
-    mx: "auto",
-    maxWbase: "90%",
-    maxWlg: "65%",
-    w: "100%",
-  };
-
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
 
   const visibleReviews =
     useBreakpointValue({ base: 2, md: 3, lg: 4 }) || reviewsData.length;
-
-  const chooseUsInfo = [
-    {
-      number: "01",
-      title: "Durable Resilience",
-      description:
-        "Our gloves are crafted with top-tier materials, ensuring long-lasting durability to withstand the rigors of any task.",
-      color: "#F3F4F6",
-    },
-    {
-      number: "02",
-      title: "Precision Fit Technology",
-      description:
-        "Enjoy a glove that feels like a second skin. Our Precision Fit Technology ensures a snug and comfortable fit",
-      color: "white",
-    },
-    {
-      number: "03",
-      title: "Weather-Defying Performance",
-      description:
-        "Conquer the elements with gloves designed to defy weather extremes. Our weather-resistant materials provide optimal protection.",
-      color: "#F3F4F6",
-    },
-    {
-      number: "04",
-      title: "Breathable Comfort",
-      description:
-        "Experience a new level of comfort with our breathable gloves. Engineered with ventilation channels, they allow airflow to keep your hands cool and comfortable.",
-      color: "white",
-    },
-    {
-      number: "05",
-      title: "Touchscreen Compatibility",
-      description:
-        "Stay connected without removing your gloves. Our touchscreen-compatible design enables you to use smartphones and tablets effortlessly.",
-      color: "#F3F4F6",
-    },
-    {
-      number: "06",
-      title: "Stylish Versatility",
-      description:
-        "Our gloves seamlessly blend fashion and function, offering a versatile accessory that complements any attire.",
-      color: "white",
-    },
-  ];
-
-  const reviewsData = [
-    {
-      name: "John Doe",
-      rating: 4,
-      comment:
-        "Great product! Highly recommended. Quality exceeded expectations. Will buy again.",
-      avatarUrl: "avatar-1.jpg",
-      postedOn: "15/02/2022",
-    },
-    {
-      name: "Jane Smith",
-      rating: 5,
-      comment:
-        "Excellent service and fast delivery. Impressed with the packaging. A delightful shopping experience.",
-      avatarUrl: "avatar-2.jpg",
-      postedOn: "10/02/2022",
-    },
-    {
-      name: "Bob Johnson",
-      rating: 4,
-      comment:
-        "Good product, could be better. Sturdy build, minor improvements possible. Overall satisfied.",
-      avatarUrl: "avatar-3.jpg",
-      postedOn: "25/05/2022",
-    },
-    {
-      name: "Alice Williams",
-      rating: 5,
-      comment:
-        "Absolutely fantastic! Love it. Exceeded my expectations. Beautiful design and excellent performance.",
-      avatarUrl: "avatar-4.jpg",
-      postedOn: "19/02/2023",
-    },
-    {
-      name: "Charlie Brown",
-      rating: 4,
-      comment:
-        "Good value for the price. Reliable performance. Recommended for budget-conscious buyers.",
-      avatarUrl: "avatar-5.jpg",
-      postedOn: "13/08/2023",
-    },
-  ];
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -168,22 +74,6 @@ const Home = () => {
         </Box>
       </Flex>
       <BlackSection cardCount={4} globalPageStyles={globalPageStyles} />
-      {/* <Box bg="white" paddingTop={{ base: "50px", md: "100px", lg: "150px" }}>
-        <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w} padding="50px">
-          <Text
-            fontSize={{ base: "md", md: "xl", lg: "2xl" }}
-            fontWeight="400"
-            fontFamily="Arial"
-            align="center">
-            “Trusted Habbits gloves embody excellence, setting a new standard in
-            hand safety. Engineered for superior protection and comfort, they
-            empower you with confidence in every task. Trusted by professionals,
-            our gloves redefine habits, providing unmatched security. Elevate
-            your safety with Trusted Habbits – where protection meets
-            excellence, trusted by many.”
-          </Text>
-        </Box>
-      </Box> */}
 
       {/* Choose us Section */}
       <Box bg="white">
@@ -256,7 +146,7 @@ const Home = () => {
             Customer Reviews
           </Heading>
           <HStack align="start" spacing={4} justifyContent="center">
-            {reviewsData.slice(0, visibleReviews).map((review, index) => (
+            {tempReviewsData.slice(0, visibleReviews).map((review, index) => (
               <Review key={index} {...review} />
             ))}
           </HStack>

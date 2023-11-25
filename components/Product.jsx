@@ -1,6 +1,7 @@
 import { Box, Image, Heading, Text, Link } from "@chakra-ui/react";
 
 export const Product = ({
+  id,
   name,
   imageSrc,
   price,
@@ -8,7 +9,7 @@ export const Product = ({
   discountedPrice,
 }) => {
   return (
-    <Link href="productid" style={{ textDecoration: "none" }}>
+    <Link href={`/product/${id}`} style={{ textDecoration: "none" }}>
       <Box
         bg="white"
         width="300px"

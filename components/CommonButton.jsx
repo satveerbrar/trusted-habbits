@@ -1,10 +1,7 @@
 import { Button } from "@chakra-ui/react";
+import { brandColors } from "@/utils/staticData";
 
 export const CommonButton = ({ text, ...rest }) => {
-  const brandColors = {
-    primary: "#007665",
-    primaryDark: "#0f6357",
-  };
   return (
     <Button
       bg={brandColors.primary}

@@ -11,6 +11,16 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
+import {
+  categories,
+  sizes,
+  colors,
+  materials,
+  styles,
+  seasons,
+  usages,
+} from "@/utils/staticData";
+
 export const Sidebar = () => {
   const [selectedCategories, setSelectedCategories] = React.useState([]);
   const [selectedSizes, setSelectedSizes] = React.useState([]);
@@ -19,14 +29,6 @@ export const Sidebar = () => {
   const [selectedStyles, setSelectedStyles] = React.useState([]);
   const [selectedSeasons, setSelectedSeasons] = React.useState([]);
   const [selectedUsages, setSelectedUsages] = React.useState([]);
-
-  const categories = ["Medical", "Industrial", "Construction", "Food"];
-  const sizes = ["Small", "Medium", "Large"];
-  const colors = ["Red", "Blue", "Green"];
-  const materials = ["Leather", "Cotton", "Synthetic"];
-  const styles = ["Fingerless", "Full-finger", "Thermal", "Waterproof"];
-  const seasons = ["Winter", "Summer", "All-Season"];
-  const usages = ["Sports", "Casual", "Formal", "Work"];
 
   const { isOpen: categoryOpen, onToggle: toggleCategory } = useDisclosure();
   const { isOpen: sizeOpen, onToggle: toggleSize } = useDisclosure();

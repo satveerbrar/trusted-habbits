@@ -1,32 +1,10 @@
 import PropTypes from "prop-types";
 import { Box, Flex } from "@chakra-ui/react";
 import { Card } from "./Card";
+import { cardsInfo } from "@/utils/staticData";
 
 export const BlackSection = ({ cardCount, globalPageStyles }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles;
-
-  const cardsInfo = [
-    {
-      text: "Medical Gloves",
-      imageSrc: "medical-gloves.jpg",
-      alt: "Medical Gloves",
-    },
-    {
-      text: "Warehouse Gloves",
-      imageSrc: "warehouse-gloves.jpg",
-      alt: "Warehouse Gloves",
-    },
-    {
-      text: " Construction Gloves",
-      imageSrc: "construction-gloves.jpg",
-      alt: "Construction Gloves",
-    },
-    {
-      text: "Mechanic Gloves",
-      imageSrc: "mechanic-gloves.jpg",
-      alt: "Mechanic Gloves",
-    },
-  ];
 
   const generateCards = () => {
     const cards = [];
