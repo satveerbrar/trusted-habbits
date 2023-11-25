@@ -24,7 +24,7 @@ export const Product = ({
         textAlign="center">
         <Box>
           <Image
-            src={`/images/${imageSrc}`}
+            src={`/images/${imageSrc[0]}`}
             alt={name}
             maxH="250px"
             objectFit="cover"
@@ -36,7 +36,7 @@ export const Product = ({
             {name}
           </Heading>
           <Text color="gray.600" fontSize="xs" mt="10px" mx="5px">
-            {description}
+            {description[0]}
           </Text>
 
           <Box display="flex" flexDirection="row" justifyContent="space-around">

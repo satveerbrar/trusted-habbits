@@ -5,16 +5,9 @@ import { Product } from "@/components/Product";
 import { Footer } from "@/components/Footer";
 import { Sidebar } from "@/components/Sidebar";
 import { tempProductsData } from "@/utils/temporary";
+import { globalPageStyles } from "@/utils/staticData";
 
 const products = ({ productsData }) => {
-  const globalPageStyles = {
-    bg: "#D9D9D9",
-    mx: "auto",
-    maxWbase: "90%",
-    maxWlg: "65%",
-    w: "100%",
-  };
-
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
 
   return (
