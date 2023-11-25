@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Sidebar } from "@/components/Sidebar";
 import { tempProductsData } from "@/utils/temporary";
 
-const products = () => {
+const products = ({ productsData }) => {
   const globalPageStyles = {
     bg: "#D9D9D9",
     mx: "auto",
@@ -36,7 +36,7 @@ const products = () => {
               flexDirection="row"
               flexWrap="wrap"
               justifyContent="space-between">
-              {tempProductsData.map((product) => (
+              {productsData.map((product) => (
                 <Product key={product.id} {...product} />
               ))}
             </Box>
@@ -48,5 +48,16 @@ const products = () => {
     </Flex>
   );
 };
+
+export async function getStaticProps() {
+  // Replace tempProductData with fetch from database in future
+  const productsData = tempProductsData;
+
+  return {
+    props: {
+      productsData: productsData,
+    },
+  };
+}
 
 export default products;

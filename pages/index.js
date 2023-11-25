@@ -24,7 +24,7 @@ import { Review } from "@/components/Review";
 import { chooseUsInfo, globalPageStyles } from "@/utils/staticData";
 import { tempReviewsData } from "@/utils/temporary";
 
-const Home = () => {
+const Home = ({ reviewsData }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
 
   const visibleReviews =
@@ -146,7 +146,7 @@ const Home = () => {
             Customer Reviews
           </Heading>
           <HStack align="start" spacing={4} justifyContent="center">
-            {tempReviewsData.slice(0, visibleReviews).map((review, index) => (
+            {reviewsData.slice(0, visibleReviews).map((review, index) => (
               <Review key={index} {...review} />
             ))}
           </HStack>
@@ -185,5 +185,16 @@ const Home = () => {
     </Flex>
   );
 };
+
+export async function getStaticProps() {
+  // Replace tempReviewsData with fetch from database in future
+  const reviewsData = tempReviewsData;
+
+  return {
+    props: {
+      reviewsData: reviewsData,
+    },
+  };
+}
 
 export default Home;
