@@ -12,7 +12,7 @@ export const Product = ({
     <Link href={`/product/${id}`} style={{ textDecoration: "none" }}>
       <Box
         bg="white"
-        width="300px"
+        width={{ base: "300px", md: "280px", lg: "320px" }}
         borderWidth="1px"
         borderRadius="lg"
         overflow="hidden"

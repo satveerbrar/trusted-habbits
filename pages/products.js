@@ -22,13 +22,16 @@ const products = ({ productsData }) => {
             w={w}
             display="flex"
             flexDirection="row">
-            <Sidebar />
+            <Box>
+              <Sidebar />
+            </Box>
+
             <Box
-              p="100px"
+              pt="87px"
               display="flex"
               flexDirection="row"
               flexWrap="wrap"
-              justifyContent="space-between">
+              justifyContent={{ base: "center", lg: "flex-start" }}>
               {productsData.map((product) => (
                 <Product key={product.id} {...product} />
               ))}

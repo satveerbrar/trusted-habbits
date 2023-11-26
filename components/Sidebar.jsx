@@ -79,7 +79,7 @@ export const Sidebar = () => {
   return (
     <Box
       mt="100px"
-      px="30px"
+      p="30px"
       bg="white"
       width="250px"
       boxShadow="lg"
@@ -92,7 +92,7 @@ export const Sidebar = () => {
         color="#0f6357">
         Filters
       </Text>
-      <VStack align="start" spacing="4">
+      <VStack align="start" spacing="20px">
         {/* Category Filter */}
         <Box>
           <HStack justify="space-between" align="center">
@@ -107,7 +107,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={categoryOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {categories.map((category, index) => (
                 <Checkbox
                   size="sm"
@@ -138,7 +138,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={sizeOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {sizes.map((size, index) => (
                 <Checkbox
                   size="sm"
@@ -168,7 +168,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={colorOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {colors.map((color, index) => (
                 <Checkbox
                   size="sm"
@@ -198,7 +198,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={materialOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {materials.map((material, index) => (
                 <Checkbox
                   size="sm"
@@ -228,7 +228,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={styleOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {styles.map((style, index) => (
                 <Checkbox
                   size="sm"
@@ -258,7 +258,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={seasonOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {seasons.map((season, index) => (
                 <Checkbox
                   size="sm"
@@ -288,7 +288,7 @@ export const Sidebar = () => {
             />
           </HStack>
           <Collapse in={usageOpen}>
-            <VStack align="start" spacing="2">
+            <VStack align="start" spacing="10px" pt="10px">
               {usages.map((usage, index) => (
                 <Checkbox
                   size="sm"
