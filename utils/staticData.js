@@ -81,6 +81,36 @@ const chooseUsInfo = [
   },
 ];
 
+const faqData = [
+  {
+    question: "Is a sample available for big orders?",
+    answer:
+      "Yes, samples are available for large orders at no cost. Please contact us via email to request your samples and explore the quality and suitability of our products.",
+  },
+  {
+    question: "How do I order online?",
+    answer:
+      "At the moment, online ordering is not available. To place an order, please reach out to us via email, and our team will assist you with the necessary steps.",
+  },
+  {
+    question: "Is shipping available?",
+    answer:
+      "Yes, we offer shipping services. Once you’ve finalized your order, we will provide you with shipping options and associated costs. Feel free to inquire about specific shipping details when contacting us through email.",
+  },
+  {
+    question: "Can I get an invoice for my purchase?",
+    answer:
+      "Yes, you can. Please contact our customer support and provide your purchase number.",
+  },
+];
+
+const contactInfo = {
+  name: "Gurpreet Singh Sidhu",
+  email: "gurpreet10chakar@gmail.com",
+  phoneNumber: "+12892424178",
+  whatsAppNumber: "+12892424178",
+};
+
 //For Sidebar filter section in products page.
 const categories = ["Medical", "Industrial", "Construction", "Food"];
 const sizes = ["Small", "Medium", "Large"];
@@ -102,4 +132,6 @@ export {
   styles,
   seasons,
   usages,
+  faqData,
+  contactInfo,
 };
