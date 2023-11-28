@@ -111,6 +111,24 @@ const contactInfo = {
   whatsAppNumber: "+12892424178",
 };
 
+const teamMemberInfo = [
+  {
+    name: "Gurpreet Sidhu",
+    title: "Founder & CEO",
+    imageSrc: "gurpreet-avatar.jpg",
+  },
+  {
+    name: "Manjinder Sidhu",
+    title: "Store Manager",
+    imageSrc: "manjinder-avatar.jpg",
+  },
+  {
+    name: "Satveer Brar",
+    title: "Supply Chain",
+    imageSrc: "satveer-avatar.jpg",
+  },
+];
+
 //For Sidebar filter section in products page.
 const categories = ["Medical", "Industrial", "Construction", "Food"];
 const sizes = ["Small", "Medium", "Large"];
@@ -134,4 +152,5 @@ export {
   usages,
   faqData,
   contactInfo,
+  teamMemberInfo,
 };
