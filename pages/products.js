@@ -21,7 +21,7 @@ const products = ({ productsData }) => {
             maxW={{ base: maxWbase, lg: maxWlg }}
             w={w}
             display="flex"
-            flexDirection="row">
+            flexDirection={{ base: "column", md: "row" }}>
             <Box>
               <Sidebar />
             </Box>
