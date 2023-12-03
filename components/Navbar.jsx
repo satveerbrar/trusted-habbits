@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import {
   Flex,
   Link,
@@ -13,10 +14,16 @@ import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { Logo } from "./Logo";
 
 export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
+  const router = useRouter();
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleLoginClick = () => {
+    router.push("/auth/signIn");
   };
 
   return (
@@ -81,6 +88,7 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
         borderRadius="2xl"
         display={{ base: "none", md: "block" }}
         mr="1rem"
+        onClick={handleLoginClick}
       />
       <HStack display={{ base: "none", md: "block" }} spacing={2}>
         <Icon as={FaShoppingCart} boxSize={6} />
