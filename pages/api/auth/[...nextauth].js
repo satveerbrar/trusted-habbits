@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import connectToDatabase from "@/utils/dbConnect";
+import User from "@/models/user";
+
 connectToDatabase();
 
 export default NextAuth({
@@ -14,29 +16,31 @@ export default NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async signIn(user_profile) {
-      const { profile, user } = user_profile;
-      const { given_name, family_name } = profile;
-      const { id, email, image } = user;
+      const { profile } = user_profile;
+      const { given_name, family_name, email, image } = profile;
       // Check if the user already exists in your database
-      // const existingUser = await findUserByEmail(email);
+      const existingUser = await User.findOne({ email: email });
 
       if (existingUser) {
         console.log(`Existing user signed in: ${email}`);
       } else {
         // If the user doesn't exist, create a new user in your database
-        const { name } = profile;
+        const userInfo = {
+          firstName: given_name,
+          lastName: family_name,
+          username: email,
+          email: email,
+          image: image,
+        };
+        const user = new User(userInfo);
+        await user.save();
         console.log(`New user created: ${email}`);
       }
       return true;
     },
     async redirect(urlObject) {
-      const { url, baseUrl: providedBaseUrl } = urlObject;
-      if (url.startsWith(providedBaseUrl)) {
-        return url;
-      } else {
-        console.log("Redirecting to baseUrl:", providedBaseUrl);
-        return providedBaseUrl;
-      }
+      const { baseUrl: providedBaseUrl } = urlObject;
+      return providedBaseUrl;
     },
   },
 });
