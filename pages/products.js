@@ -4,8 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Product } from "@/components/Product";
 import { Footer } from "@/components/Footer";
 import { Sidebar } from "@/components/Sidebar";
-import { tempProductsData } from "@/utils/temporary";
 import { globalPageStyles } from "@/utils/staticData";
+import { getProducts } from "@/controllers/product";
 
 const products = ({ productsData }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
@@ -32,8 +32,8 @@ const products = ({ productsData }) => {
               flexDirection="row"
               flexWrap="wrap"
               justifyContent={{ base: "center", lg: "flex-start" }}>
-              {productsData.map((product) => (
-                <Product key={product.id} {...product} />
+              {productsData.map((productData) => (
+                <Product key={productData.id} {...productData} />
               ))}
             </Box>
           </Box>
@@ -46,8 +46,9 @@ const products = ({ productsData }) => {
 };
 
 export async function getStaticProps() {
-  // Replace tempProductData with fetch from database in future
-  const productsData = tempProductsData;
+  const productsData = await getProducts();
+
+  console.log(productsData);
 
   return {
     props: {
