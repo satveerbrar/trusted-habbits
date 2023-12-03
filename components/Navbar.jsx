@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { signOut, useSession } from "next-auth/react";
+
 import {
   Flex,
   Link,
@@ -15,6 +17,7 @@ import { Logo } from "./Logo";
 
 export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
   const router = useRouter();
+  const { data: session } = useSession();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,6 +27,10 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
 
   const handleLoginClick = () => {
     router.push("/auth/signIn");
+  };
+
+  const handleLogoutClick = async () => {
+    await signOut();
   };
 
   return (
@@ -81,15 +88,30 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
         <Link href="/contact">Contact</Link>
       </HStack>
       <Spacer />
-      <CommonButton
-        text="LOGIN"
-        size="sm"
-        fontSize="xs"
-        borderRadius="2xl"
-        display={{ base: "none", md: "block" }}
-        mr="1rem"
-        onClick={handleLoginClick}
-      />
+      {session ? (
+        <CommonButton
+          text="LOGOUT"
+          size="sm"
+          fontSize="xs"
+          bg="#a1332b"
+          borderRadius="2xl"
+          display={{ base: "none", md: "block" }}
+          _hover={{ bg: "#8f221a" }}
+          mr="1rem"
+          onClick={handleLogoutClick}
+        />
+      ) : (
+        <CommonButton
+          text="LOGIN"
+          size="sm"
+          fontSize="xs"
+          borderRadius="2xl"
+          display={{ base: "none", md: "block" }}
+          mr="1rem"
+          onClick={handleLoginClick}
+        />
+      )}
+
       <HStack display={{ base: "none", md: "block" }} spacing={2}>
         <Icon as={FaShoppingCart} boxSize={6} />
       </HStack>
