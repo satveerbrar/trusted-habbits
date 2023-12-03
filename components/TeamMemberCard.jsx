@@ -1,4 +1,4 @@
-import { Box, Text, Avatar } from "@chakra-ui/react";
+import { Box, Text, Avatar } from "@chakra-ui/react"
 
 export const TeamMemberCard = ({ name, title, imageSrc }) => (
   <Box
@@ -11,7 +11,8 @@ export const TeamMemberCard = ({ name, title, imageSrc }) => (
     borderRadius="md"
     boxShadow="md"
     width="220px"
-    height="260px">
+    height="260px"
+  >
     <Avatar size="2xl" name={name} src={imageSrc} mb="30px" />
     <Text fontWeight="600" fontSize="lg" color="white">
       {title}
@@ -20,4 +21,4 @@ export const TeamMemberCard = ({ name, title, imageSrc }) => (
       {name}
     </Text>
   </Box>
-);
+)

@@ -1,13 +1,13 @@
-import PropTypes from "prop-types";
-import { Box, Flex } from "@chakra-ui/react";
-import { Card } from "./Card";
-import { cardsInfo } from "@/utils/staticData";
+import PropTypes from "prop-types"
+import { Box, Flex } from "@chakra-ui/react"
+import { Card } from "./Card"
+import { cardsInfo } from "@/utils/staticData"
 
 export const BlackSection = ({ cardCount, globalPageStyles }) => {
-  const { mx, maxWbase, maxWlg, w } = globalPageStyles;
+  const { mx, maxWbase, maxWlg, w } = globalPageStyles
 
   const generateCards = () => {
-    const cards = [];
+    const cards = []
     for (let i = 0; i < cardCount; i++) {
       cards.push(
         <Box
@@ -17,13 +17,14 @@ export const BlackSection = ({ cardCount, globalPageStyles }) => {
           bottom={{ base: "-50px", sm: "-50px", md: "-70px", lg: "-100px" }}
           height={{ base: "200px", sm: "200px", md: "180px", lg: "320px" }}
           mx={{ base: "5px", sm: "5px", md: "10px", lg: "20px" }}
-          marginBottom="10px">
+          marginBottom="10px"
+        >
           <Card cardInfo={cardsInfo[i]} />
-        </Box>
-      );
+        </Box>,
+      )
     }
-    return cards;
-  };
+    return cards
+  }
 
   return (
     <Box bg="black" marginTop="50px">
@@ -38,13 +39,14 @@ export const BlackSection = ({ cardCount, globalPageStyles }) => {
         position="relative"
         mx={mx}
         maxW={{ base: maxWbase, lg: maxWlg }}
-        w={w}>
+        w={w}
+      >
         {generateCards()}
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
 BlackSection.propTypes = {
   cardCount: PropTypes.number.isRequired,
-};
+}

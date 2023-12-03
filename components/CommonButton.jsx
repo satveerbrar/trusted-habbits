@@ -1,5 +1,5 @@
-import { Button } from "@chakra-ui/react";
-import { brandColors } from "@/utils/staticData";
+import { Button } from "@chakra-ui/react"
+import { brandColors } from "@/utils/staticData"
 
 export const CommonButton = ({ text, ...rest }) => {
   return (
@@ -10,8 +10,9 @@ export const CommonButton = ({ text, ...rest }) => {
       border="1px solid"
       borderColor="black"
       _hover={{ bg: brandColors.primaryDark }}
-      {...rest}>
+      {...rest}
+    >
       {text}
     </Button>
-  );
-};
+  )
+}

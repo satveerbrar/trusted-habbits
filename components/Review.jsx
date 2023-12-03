@@ -1,20 +1,20 @@
-import { Box, Text, Icon, Avatar } from "@chakra-ui/react";
-import { FaStar } from "react-icons/fa";
+import { Box, Text, Icon, Avatar } from "@chakra-ui/react"
+import { FaStar } from "react-icons/fa"
 
 export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
   const renderStars = () => {
-    const stars = [];
+    const stars = []
     for (let i = 1; i <= 5; i++) {
       stars.push(
         <Icon
           key={i}
           as={FaStar}
           color={i <= rating ? "yellow.500" : "gray.300"}
-        />
-      );
+        />,
+      )
     }
-    return stars;
-  };
+    return stars
+  }
 
   return (
     <Box
@@ -27,12 +27,14 @@ export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
       height="310px"
       display="flex"
       flexDirection="column"
-      justifyContent="flex-start">
+      justifyContent="flex-start"
+    >
       <Box
         display="flex"
         flexDirection="row"
         justifyContent="flex-start"
-        alignItems="center">
+        alignItems="center"
+      >
         <Avatar
           src={`/images/${avatarUrl}`}
           name={name}
@@ -51,5 +53,5 @@ export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
         <Text>{comment}</Text>
       </Box>
     </Box>
-  );
-};
+  )
+}

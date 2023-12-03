@@ -12,25 +12,25 @@ import {
   Divider,
   Grid,
   GridItem,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa"
 
-import { globalPageStyles } from "@/utils/staticData";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { CommonButton } from "@/components/CommonButton";
-import { faqData } from "@/utils/staticData";
-import { contactInfo } from "@/utils/staticData";
+import { globalPageStyles } from "@/utils/staticData"
+import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
+import { CommonButton } from "@/components/CommonButton"
+import { faqData } from "@/utils/staticData"
+import { contactInfo } from "@/utils/staticData"
 
 const Contact = () => {
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // Add your form submission logic here
-  };
+  }
 
-  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
-  const { email, phoneNumber, whatsAppNumber } = contactInfo;
+  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
+  const { email, phoneNumber, whatsAppNumber } = contactInfo
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -42,7 +42,8 @@ const Contact = () => {
           maxW={{ base: maxWbase, lg: maxWlg }}
           w={w}
           display="flex"
-          flexDirection={{ base: "column", md: "row" }}>
+          flexDirection={{ base: "column", md: "row" }}
+        >
           <Box p={8}>
             {/* FAQ Section */}
             <Flex my="100px">
@@ -59,7 +60,8 @@ const Contact = () => {
                         color="green.800"
                         fontWeight="600"
                         mb="10px"
-                        fontSize="18px">
+                        fontSize="18px"
+                      >
                         {item.question}
                       </Text>
                       <Text color="gray.700" fontSize="18px">
@@ -134,7 +136,8 @@ const Contact = () => {
                   textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "baseline",
-                }}>
+                }}
+              >
                 {"   "}
                 <FaWhatsapp size="13px" style={{ marginRight: "4px" }} />
                 WhatsApp
@@ -153,7 +156,7 @@ const Contact = () => {
 
       <Footer />
     </Flex>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

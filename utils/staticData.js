@@ -4,12 +4,12 @@ const globalPageStyles = {
   maxWbase: "90%",
   maxWlg: "65%",
   w: "100%",
-};
+}
 
 const brandColors = {
   primary: "#007665",
   primaryDark: "#0f6357",
-};
+}
 
 //For Black section cards
 const cardsInfo = [
@@ -33,7 +33,7 @@ const cardsInfo = [
     imageSrc: "mechanic-gloves.jpg",
     alt: "Mechanic Gloves",
   },
-];
+]
 
 // For home page
 const chooseUsInfo = [
@@ -79,7 +79,7 @@ const chooseUsInfo = [
       "Our gloves seamlessly blend fashion and function, offering a versatile accessory that complements any attire.",
     color: "white",
   },
-];
+]
 
 const faqData = [
   {
@@ -102,14 +102,14 @@ const faqData = [
     answer:
       "Yes, you can. Please contact our customer support and provide your purchase number.",
   },
-];
+]
 
 const contactInfo = {
   name: "Gurpreet Singh Sidhu",
   email: "gurpreet10chakar@gmail.com",
   phoneNumber: "+12892424178",
   whatsAppNumber: "+12892424178",
-};
+}
 
 const teamMemberInfo = [
   {
@@ -127,16 +127,16 @@ const teamMemberInfo = [
     title: "Supply Chain",
     imageSrc: "satveer-avatar.jpg",
   },
-];
+]
 
 //For Sidebar filter section in products page.
-const categories = ["Medical", "Industrial", "Construction", "Food"];
-const sizes = ["Small", "Medium", "Large"];
-const colors = ["Red", "Blue", "Green"];
-const materials = ["Leather", "Cotton", "Synthetic"];
-const styles = ["Fingerless", "Full-finger", "Thermal", "Waterproof"];
-const seasons = ["Winter", "Summer", "All-Season"];
-const usages = ["Sports", "Casual", "Formal", "Work"];
+const categories = ["Medical", "Industrial", "Construction", "Food"]
+const sizes = ["Small", "Medium", "Large"]
+const colors = ["Red", "Blue", "Green"]
+const materials = ["Leather", "Cotton", "Synthetic"]
+const styles = ["Fingerless", "Full-finger", "Thermal", "Waterproof"]
+const seasons = ["Winter", "Summer", "All-Season"]
+const usages = ["Sports", "Casual", "Formal", "Work"]
 
 export {
   globalPageStyles,
@@ -153,4 +153,4 @@ export {
   faqData,
   contactInfo,
   teamMemberInfo,
-};
+}

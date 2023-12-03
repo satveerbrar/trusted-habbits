@@ -11,24 +11,24 @@ import {
   Link,
   Icon,
   useBreakpointValue,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 
-import { FaEye } from "react-icons/fa";
+import { FaEye } from "react-icons/fa"
 
-import { Navbar } from "@/components/Navbar";
-import { CommonButton } from "@/components/CommonButton";
-import { BlackSection } from "@/components/BlackSection";
-import { Footer } from "@/components/Footer";
-import { InfoCard } from "@/components/InfoCard";
-import { Review } from "@/components/Review";
-import { chooseUsInfo, globalPageStyles } from "@/utils/staticData";
-import { tempReviewsData } from "@/utils/temporary";
+import { Navbar } from "@/components/Navbar"
+import { CommonButton } from "@/components/CommonButton"
+import { BlackSection } from "@/components/BlackSection"
+import { Footer } from "@/components/Footer"
+import { InfoCard } from "@/components/InfoCard"
+import { Review } from "@/components/Review"
+import { chooseUsInfo, globalPageStyles } from "@/utils/staticData"
+import { tempReviewsData } from "@/utils/temporary"
 
 const Home = ({ reviewsData }) => {
-  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
 
   const visibleReviews =
-    useBreakpointValue({ base: 2, md: 3, lg: 4 }) || reviewsData.length;
+    useBreakpointValue({ base: 2, md: 3, lg: 4 }) || reviewsData.length
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -39,18 +39,21 @@ const Home = ({ reviewsData }) => {
         maxW={{ base: maxWbase, lg: maxWlg }}
         w={w}
         flex="1"
-        mt="80px">
+        mt="80px"
+      >
         <Flex direction="column" width={{ base: "80%", md: "50%" }}>
           <Heading
             fontSize={{ base: "30px", sm: "30px", md: "36px", lg: "48px" }}
-            color="black">
+            color="black"
+          >
             Unleashing Confidence Through Advanced Protection
           </Heading>
           <Heading
             fontSize="18px"
             fontWeight="regular"
             color="black"
-            mt={{ base: "25px", sm: "25px", md: "30px", lg: "35px" }}>
+            mt={{ base: "25px", sm: "25px", md: "30px", lg: "35px" }}
+          >
             Comfort, Confidence, Empowerment.
           </Heading>
           <CommonButton
@@ -82,14 +85,16 @@ const Home = ({ reviewsData }) => {
           maxW={{ base: maxWbase, lg: maxWlg }}
           w={w}
           mt="180px"
-          mb="20px">
+          mb="20px"
+        >
           <Heading
             as="h2"
             fontSize="40px"
             align="center"
             marginY="30px"
             fontWeight="600"
-            color="black">
+            color="black"
+          >
             Why Choose Us
           </Heading>
           <Grid
@@ -98,7 +103,8 @@ const Home = ({ reviewsData }) => {
               md: "repeat(2, 1fr)",
               lg: "repeat(3, 1fr)",
             }}
-            gap={4}>
+            gap={4}
+          >
             {chooseUsInfo.map((info) => (
               <GridItem key={info.number} colSpan={{ base: 6, md: 1, lg: 1 }}>
                 <InfoCard {...info} />
@@ -117,7 +123,8 @@ const Home = ({ reviewsData }) => {
                 color="white"
                 fontWeight="500"
                 fontSize={{ base: "20px", md: "30px" }}
-                mb="20px">
+                mb="20px"
+              >
                 Have any doubts? Order a glove sample before finalizing your
                 purchase decision
               </Heading>
@@ -158,7 +165,8 @@ const Home = ({ reviewsData }) => {
               href="/reviews"
               textDecoration="underline"
               display="inline-block"
-              _hover={{ color: "blue.500" }}>
+              _hover={{ color: "blue.500" }}
+            >
               <Text fontSize="md" fontWeight="regular" align="center">
                 See All Reviews
               </Text>
@@ -169,7 +177,8 @@ const Home = ({ reviewsData }) => {
               textDecoration="underline"
               display="inline-block"
               ml={2}
-              _hover={{ color: "blue.500" }}>
+              _hover={{ color: "blue.500" }}
+            >
               <Text fontSize="md" fontWeight="regular" align="center">
                 Post a review
               </Text>
@@ -183,18 +192,18 @@ const Home = ({ reviewsData }) => {
         <Footer />
       </Box>
     </Flex>
-  );
-};
+  )
+}
 
 export async function getStaticProps() {
   // Replace tempReviewsData with fetch from database in future
-  const reviewsData = tempReviewsData;
+  const reviewsData = tempReviewsData
 
   return {
     props: {
       reviewsData: reviewsData,
     },
-  };
+  }
 }
 
-export default Home;
+export default Home

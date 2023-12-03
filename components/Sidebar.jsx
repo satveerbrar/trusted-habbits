@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   Box,
   Text,
@@ -10,8 +10,8 @@ import {
   useBreakpointValue,
   HStack,
   Button,
-} from "@chakra-ui/react";
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+} from "@chakra-ui/react"
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons"
 
 import {
   categories,
@@ -21,65 +21,65 @@ import {
   styles,
   seasons,
   usages,
-} from "@/utils/staticData";
+} from "@/utils/staticData"
 
 export const Sidebar = () => {
-  const [selectedCategories, setSelectedCategories] = React.useState([]);
-  const [selectedSizes, setSelectedSizes] = React.useState([]);
-  const [selectedColors, setSelectedColors] = React.useState([]);
-  const [selectedMaterials, setSelectedMaterials] = React.useState([]);
-  const [selectedStyles, setSelectedStyles] = React.useState([]);
-  const [selectedSeasons, setSelectedSeasons] = React.useState([]);
-  const [selectedUsages, setSelectedUsages] = React.useState([]);
+  const [selectedCategories, setSelectedCategories] = React.useState([])
+  const [selectedSizes, setSelectedSizes] = React.useState([])
+  const [selectedColors, setSelectedColors] = React.useState([])
+  const [selectedMaterials, setSelectedMaterials] = React.useState([])
+  const [selectedStyles, setSelectedStyles] = React.useState([])
+  const [selectedSeasons, setSelectedSeasons] = React.useState([])
+  const [selectedUsages, setSelectedUsages] = React.useState([])
 
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true })
+  const isMobile = useBreakpointValue({ base: true, md: false })
 
-  const { isOpen: categoryOpen, onToggle: toggleCategory } = useDisclosure();
-  const { isOpen: sizeOpen, onToggle: toggleSize } = useDisclosure();
-  const { isOpen: colorOpen, onToggle: toggleColor } = useDisclosure();
-  const { isOpen: materialOpen, onToggle: toggleMaterial } = useDisclosure();
-  const { isOpen: styleOpen, onToggle: toggleStyle } = useDisclosure();
-  const { isOpen: seasonOpen, onToggle: toggleSeason } = useDisclosure();
-  const { isOpen: usageOpen, onToggle: toggleUsage } = useDisclosure();
+  const { isOpen: categoryOpen, onToggle: toggleCategory } = useDisclosure()
+  const { isOpen: sizeOpen, onToggle: toggleSize } = useDisclosure()
+  const { isOpen: colorOpen, onToggle: toggleColor } = useDisclosure()
+  const { isOpen: materialOpen, onToggle: toggleMaterial } = useDisclosure()
+  const { isOpen: styleOpen, onToggle: toggleStyle } = useDisclosure()
+  const { isOpen: seasonOpen, onToggle: toggleSeason } = useDisclosure()
+  const { isOpen: usageOpen, onToggle: toggleUsage } = useDisclosure()
 
   const handleCategoryChange = (category) => {
-    toggleFilter(category, selectedCategories, setSelectedCategories);
-  };
+    toggleFilter(category, selectedCategories, setSelectedCategories)
+  }
 
   const handleSizeChange = (size) => {
-    toggleFilter(size, selectedSizes, setSelectedSizes);
-  };
+    toggleFilter(size, selectedSizes, setSelectedSizes)
+  }
 
   const handleColorChange = (color) => {
-    toggleFilter(color, selectedColors, setSelectedColors);
-  };
+    toggleFilter(color, selectedColors, setSelectedColors)
+  }
 
   const handleMaterialChange = (material) => {
-    toggleFilter(material, selectedMaterials, setSelectedMaterials);
-  };
+    toggleFilter(material, selectedMaterials, setSelectedMaterials)
+  }
 
   const handleStyleChange = (style) => {
-    toggleFilter(style, selectedStyles, setSelectedStyles);
-  };
+    toggleFilter(style, selectedStyles, setSelectedStyles)
+  }
 
   const handleSeasonChange = (season) => {
-    toggleFilter(season, selectedSeasons, setSelectedSeasons);
-  };
+    toggleFilter(season, selectedSeasons, setSelectedSeasons)
+  }
 
   const handleUsageChange = (usage) => {
-    toggleFilter(usage, selectedUsages, setSelectedUsages);
-  };
+    toggleFilter(usage, selectedUsages, setSelectedUsages)
+  }
 
   const toggleFilter = (value, selectedValues, setSelectedValues) => {
     setSelectedValues((prevSelected) => {
       if (prevSelected.includes(value)) {
-        return prevSelected.filter((selected) => selected !== value);
+        return prevSelected.filter((selected) => selected !== value)
       } else {
-        return [...prevSelected, value];
+        return [...prevSelected, value]
       }
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -91,7 +91,8 @@ export const Sidebar = () => {
         boxShadow="lg"
         borderRadius="md"
         position={{ base: "absolute", md: "relative" }}
-        top="0px">
+        top="0px"
+      >
         {isMobile ? (
           <Button
             variant="ghost"
@@ -100,7 +101,8 @@ export const Sidebar = () => {
             fontWeight="bold"
             fontSize="xl"
             mb="15px"
-            color="#0f6357">
+            color="#0f6357"
+          >
             Filters
           </Button>
         ) : (
@@ -109,7 +111,8 @@ export const Sidebar = () => {
             fontSize="xl"
             mb="15px"
             ml="-18px"
-            color="#0f6357">
+            color="#0f6357"
+          >
             Filters
           </Text>
         )}
@@ -139,7 +142,8 @@ export const Sidebar = () => {
                       isChecked={selectedCategories.includes(category)}
                       onChange={() => handleCategoryChange(category)}
                       colorScheme="teal"
-                      fontSize="5px ">
+                      fontSize="5px "
+                    >
                       {category}
                     </Checkbox>
                   ))}
@@ -169,7 +173,8 @@ export const Sidebar = () => {
                       key={index}
                       isChecked={selectedSizes.includes(size)}
                       onChange={() => handleSizeChange(size)}
-                      colorScheme="teal">
+                      colorScheme="teal"
+                    >
                       {size}
                     </Checkbox>
                   ))}
@@ -199,7 +204,8 @@ export const Sidebar = () => {
                       key={index}
                       isChecked={selectedColors.includes(color)}
                       onChange={() => handleColorChange(color)}
-                      colorScheme="teal">
+                      colorScheme="teal"
+                    >
                       {color}
                     </Checkbox>
                   ))}
@@ -229,7 +235,8 @@ export const Sidebar = () => {
                       key={index}
                       isChecked={selectedMaterials.includes(material)}
                       onChange={() => handleMaterialChange(material)}
-                      colorScheme="teal">
+                      colorScheme="teal"
+                    >
                       {material}
                     </Checkbox>
                   ))}
@@ -259,7 +266,8 @@ export const Sidebar = () => {
                       key={index}
                       isChecked={selectedStyles.includes(style)}
                       onChange={() => handleStyleChange(style)}
-                      colorScheme="teal">
+                      colorScheme="teal"
+                    >
                       {style}
                     </Checkbox>
                   ))}
@@ -289,7 +297,8 @@ export const Sidebar = () => {
                       key={index}
                       isChecked={selectedSeasons.includes(season)}
                       onChange={() => handleSeasonChange(season)}
-                      colorScheme="teal">
+                      colorScheme="teal"
+                    >
                       {season}
                     </Checkbox>
                   ))}
@@ -319,7 +328,8 @@ export const Sidebar = () => {
                       key={index}
                       isChecked={selectedUsages.includes(usage)}
                       onChange={() => handleUsageChange(usage)}
-                      colorScheme="teal">
+                      colorScheme="teal"
+                    >
                       {usage}
                     </Checkbox>
                   ))}
@@ -330,5 +340,5 @@ export const Sidebar = () => {
         )}
       </Box>
     </>
-  );
-};
+  )
+}

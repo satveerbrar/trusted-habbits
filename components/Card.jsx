@@ -1,7 +1,7 @@
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text, Image } from "@chakra-ui/react"
 
 export const Card = ({ cardInfo }) => {
-  const { text, imageSrc, alt } = cardInfo;
+  const { text, imageSrc, alt } = cardInfo
   return (
     <Box
       mx="auto"
@@ -13,7 +13,8 @@ export const Card = ({ cardInfo }) => {
       borderBottomRightRadius="xl"
       overflow="hidden"
       boxShadow="md"
-      position="relative">
+      position="relative"
+    >
       <Box height="83%">
         <Image
           boxSize="100%"
@@ -30,15 +31,17 @@ export const Card = ({ cardInfo }) => {
         left="0"
         width="100%"
         height="17%"
-        bg="#D9D9D9">
+        bg="#D9D9D9"
+      >
         <Text
           fontWeight="bold"
           align="center"
           color="black"
-          fontSize={{ base: "12px", md: "14px", lg: "16px" }}>
+          fontSize={{ base: "12px", md: "14px", lg: "16px" }}
+        >
           {text}
         </Text>
       </Box>
     </Box>
-  );
-};
+  )
+}

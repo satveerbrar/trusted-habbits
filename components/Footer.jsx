@@ -7,7 +7,7 @@ import {
   Box,
   Link,
   Divider,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 import {
   FaTwitter,
   FaTiktok,
@@ -15,16 +15,17 @@ import {
   FaInstagram,
   FaFacebook,
   FaCopyright,
-} from "react-icons/fa";
+} from "react-icons/fa"
 
-import { Logo } from "./Logo";
+import { Logo } from "./Logo"
 
 export const Footer = () => {
   return (
     <Container
       as="footer"
       role="contentinfo"
-      paddingTop={{ base: "20px", md: "30px" }}>
+      paddingTop={{ base: "20px", md: "30px" }}
+    >
       <Stack spacing={{ base: "4", md: "5" }} direction="column">
         <Stack justify="center" direction="row" align="center">
           <Logo />
@@ -35,7 +36,8 @@ export const Footer = () => {
             color="fg.subtle"
             lineHeight="1"
             display="flex"
-            alignItems="center">
+            alignItems="center"
+          >
             Copright
             <Box as="span" ml={1} mr={1} display="inline-block" align="center">
               <FaCopyright />
@@ -86,5 +88,5 @@ export const Footer = () => {
         </Stack>
       </Stack>
     </Container>
-  );
-};
+  )
+}

@@ -1,13 +1,13 @@
-import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react"
 
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { TeamMemberCard } from "@/components/TeamMemberCard";
-import { globalPageStyles } from "@/utils/staticData";
-import { teamMemberInfo } from "@/utils/staticData";
+import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
+import { TeamMemberCard } from "@/components/TeamMemberCard"
+import { globalPageStyles } from "@/utils/staticData"
+import { teamMemberInfo } from "@/utils/staticData"
 
 const About = () => {
-  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -19,12 +19,14 @@ const About = () => {
           maxW={{ base: maxWbase, lg: maxWlg }}
           w={w}
           display="flex"
-          flexDirection="column">
+          flexDirection="column"
+        >
           <Box
             mt="20px"
             display="flex"
             flexDirection={{ base: "column", md: "row" }}
-            alignItems="flex-start">
+            alignItems="flex-start"
+          >
             <Box flex="1">
               <Text
                 mt="20px"
@@ -32,7 +34,8 @@ const About = () => {
                 pr="220px"
                 color="gray.600"
                 lineHeight="22px"
-                fontSize="18px">
+                fontSize="18px"
+              >
                 Welcome to Trusted Habits – your premier destination for
                 top-notch gloves at unbeatable prices! We take pride in offering
                 a diverse range of gloves for every need – from DIY projects to
@@ -81,7 +84,7 @@ const About = () => {
 
       <Footer />
     </Flex>
-  );
-};
+  )
+}
 
-export default About;
+export default About

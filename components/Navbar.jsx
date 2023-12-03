@@ -1,37 +1,29 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import { signOut, useSession } from "next-auth/react";
+import { useState } from "react"
+import { useRouter } from "next/router"
+import { signOut, useSession } from "next-auth/react"
 
-import {
-  Flex,
-  Link,
-  HStack,
-  Spacer,
-  Icon,
-  Box,
-  VStack,
-} from "@chakra-ui/react";
-import { CommonButton } from "@/components/CommonButton";
-import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
-import { Logo } from "./Logo";
+import { Flex, Link, HStack, Spacer, Icon, Box, VStack } from "@chakra-ui/react"
+import { CommonButton } from "@/components/CommonButton"
+import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa"
+import { Logo } from "./Logo"
 
 export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
-  const router = useRouter();
-  const { data: session } = useSession();
+  const router = useRouter()
+  const { data: session } = useSession()
 
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
+    setMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   const handleLoginClick = () => {
-    router.push("/auth/signIn");
-  };
+    router.push("/auth/signIn")
+  }
 
   const handleLogoutClick = async () => {
-    await signOut();
-  };
+    await signOut()
+  }
 
   return (
     <Flex
@@ -42,7 +34,8 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
       color="black"
       mx={mx}
       maxW={{ base: maxWbase, lg: maxWlg }}
-      w={w}>
+      w={w}
+    >
       <Logo />
       <Spacer />
       <Spacer />
@@ -65,7 +58,8 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
           zIndex="10"
           boxShadow="md"
           spacing={4}
-          p={4}>
+          p={4}
+        >
           <Link href="/home">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/products">Products</Link>
@@ -81,7 +75,8 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
         spacing={8}
         display={{ base: "none", md: "flex" }}
         fontSize="18px"
-        fontWeight="medium">
+        fontWeight="medium"
+      >
         <Link href="/home">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/products">Products</Link>
@@ -116,5 +111,5 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
         <Icon as={FaShoppingCart} boxSize={6} />
       </HStack>
     </Flex>
-  );
-};
+  )
+}

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Box, Image, HStack } from "@chakra-ui/react";
+import React, { useState } from "react"
+import { Box, Image, HStack } from "@chakra-ui/react"
 
 export const ImageSlider = ({ images }) => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0)
 
   const changeSlide = (index) => {
-    setSlideIndex(index);
-  };
+    setSlideIndex(index)
+  }
 
   return (
     <Box position="relative" overflow="hidden">
@@ -18,7 +18,8 @@ export const ImageSlider = ({ images }) => {
           transform: `translateX(-${slideIndex * 100}%)`,
           zIndex: 1,
         }}
-        mb="20px">
+        mb="20px"
+      >
         {images.map((image, index) => (
           <Box key={index} flex="0 0 100%" boxSize="full">
             <img
@@ -37,7 +38,8 @@ export const ImageSlider = ({ images }) => {
         bottom="00px"
         left="50%"
         transform="translateX(-50%)"
-        zIndex={4}>
+        zIndex={4}
+      >
         {images.map((image, index) => (
           <Image
             key={index}
@@ -53,5 +55,5 @@ export const ImageSlider = ({ images }) => {
         ))}
       </HStack>
     </Box>
-  );
-};
+  )
+}

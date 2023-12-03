@@ -1,4 +1,4 @@
-import { Box, Image, Heading, Text, Link } from "@chakra-ui/react";
+import { Box, Image, Heading, Text, Link } from "@chakra-ui/react"
 
 export const Product = ({
   id,
@@ -21,7 +21,8 @@ export const Product = ({
         justifyContent="space-between"
         p="10px"
         margin="10px"
-        textAlign="center">
+        textAlign="center"
+      >
         <Box>
           <Image
             src={`/images/${imageSrc[0]}`}
@@ -49,12 +50,13 @@ export const Product = ({
               color="black"
               fontSize="16px"
               textDecoration="line-through"
-              opacity={0.7}>
+              opacity={0.7}
+            >
               ${price.toFixed(2)}
             </Text>
           </Box>
         </Box>
       </Box>
     </Link>
-  );
-};
+  )
+}

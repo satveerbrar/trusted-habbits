@@ -1,14 +1,13 @@
-import { Flex, Box, Divider } from "@chakra-ui/react";
-
-import { Navbar } from "@/components/Navbar";
-import { Product } from "@/components/Product";
-import { Footer } from "@/components/Footer";
-import { Sidebar } from "@/components/Sidebar";
-import { globalPageStyles } from "@/utils/staticData";
-import { getProducts } from "@/controllers/product";
+import { Flex, Box, Divider } from "@chakra-ui/react"
+import { Navbar } from "@/components/Navbar"
+import { Product } from "@/components/Product"
+import { Footer } from "@/components/Footer"
+import { Sidebar } from "@/components/Sidebar"
+import { globalPageStyles } from "@/utils/staticData"
+import { getProducts } from "@/controllers/product"
 
 const products = ({ productsData }) => {
-  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -21,7 +20,8 @@ const products = ({ productsData }) => {
             maxW={{ base: maxWbase, lg: maxWlg }}
             w={w}
             display="flex"
-            flexDirection={{ base: "column", md: "row" }}>
+            flexDirection={{ base: "column", md: "row" }}
+          >
             <Box>
               <Sidebar />
             </Box>
@@ -31,7 +31,8 @@ const products = ({ productsData }) => {
               display="flex"
               flexDirection="row"
               flexWrap="wrap"
-              justifyContent={{ base: "center", lg: "flex-start" }}>
+              justifyContent={{ base: "center", lg: "flex-start" }}
+            >
               {productsData.map((productData) => (
                 <Product key={productData.id} {...productData} />
               ))}
@@ -42,19 +43,19 @@ const products = ({ productsData }) => {
 
       <Footer />
     </Flex>
-  );
-};
+  )
+}
 
 export async function getStaticProps() {
-  const productsData = await getProducts();
+  const productsData = await getProducts()
 
-  console.log(productsData);
+  console.log(productsData)
 
   return {
     props: {
       productsData: productsData,
     },
-  };
+  }
 }
 
-export default products;
+export default products
