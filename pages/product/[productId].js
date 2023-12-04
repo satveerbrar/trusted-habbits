@@ -18,8 +18,8 @@ import { CommonButton } from "@/components/CommonButton"
 import { globalPageStyles } from "@/utils/staticData"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
-import { tempProductsData } from "@/utils/temporary"
 import { ImageSlider } from "@/components/ImageSlider"
+import { getProducts } from "@/controllers/product"
 
 const ProductPage = ({ product }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -93,11 +93,9 @@ const ProductPage = ({ product }) => {
 
 export async function getServerSideProps(context) {
   const { productId } = context.params
-
-  // Replace tempProductsData with fetch from the database in the future
-  const product = tempProductsData.find(
-    (product) => product.id === parseInt(productId),
-  )
+  console.log(productId)
+  console.log(context.params)
+  const product = await getProducts(productId)
 
   return {
     props: {

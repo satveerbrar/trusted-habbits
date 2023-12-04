@@ -34,7 +34,7 @@ const products = ({ productsData }) => {
               justifyContent={{ base: "center", lg: "flex-start" }}
             >
               {productsData.map((productData) => (
-                <Product key={productData.id} {...productData} />
+                <Product key={productData._id} {...productData} />
               ))}
             </Box>
           </Box>
@@ -48,8 +48,6 @@ const products = ({ productsData }) => {
 
 export async function getStaticProps() {
   const productsData = await getProducts()
-
-  console.log(productsData)
 
   return {
     props: {
