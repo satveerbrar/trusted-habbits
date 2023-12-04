@@ -12,17 +12,17 @@ import {
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 
-import { CommonButton } from "@/components/CommonButton";
-import { globalPageStyles } from "@/utils/staticData";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { tempProductsData } from "@/utils/temporary";
-import { ImageSlider } from "@/components/ImageSlider";
+import { CommonButton } from "@/components/CommonButton"
+import { globalPageStyles } from "@/utils/staticData"
+import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
+import { tempProductsData } from "@/utils/temporary"
+import { ImageSlider } from "@/components/ImageSlider"
 
 const ProductPage = ({ product }) => {
-  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles;
+  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -33,7 +33,8 @@ const ProductPage = ({ product }) => {
           <Box
             display="flex"
             flexDirection={{ base: "column", lg: "row" }}
-            p="100px">
+            p="100px"
+          >
             <Box flex="1" pr="30px">
               <ImageSlider images={product.imageSrc} />
             </Box>
@@ -55,7 +56,8 @@ const ProductPage = ({ product }) => {
                 min={1}
                 max={200}
                 width="80px"
-                mb="20px">
+                mb="20px"
+              >
                 <NumberInputField />
                 <NumberInputStepper>
                   <NumberIncrementStepper />
@@ -86,22 +88,22 @@ const ProductPage = ({ product }) => {
       </Flex>
       <Footer />
     </Flex>
-  );
-};
+  )
+}
 
 export async function getServerSideProps(context) {
-  const { productId } = context.params;
+  const { productId } = context.params
 
   // Replace tempProductsData with fetch from the database in the future
   const product = tempProductsData.find(
-    (product) => product.id === parseInt(productId)
-  );
+    (product) => product.id === parseInt(productId),
+  )
 
   return {
     props: {
       product: product || null,
     },
-  };
+  }
 }
 
-export default ProductPage;
+export default ProductPage
