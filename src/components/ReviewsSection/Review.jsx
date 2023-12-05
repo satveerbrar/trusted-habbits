@@ -2,6 +2,15 @@ import { Box, Text, Icon, Avatar } from "@chakra-ui/react"
 import { FaStar } from "react-icons/fa"
 
 export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
+  const originalPostedOn = new Date(postedOn)
+  const formattedPostedOn = originalPostedOn.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+
+  console.log()
+
   const renderStars = () => {
     const stars = []
     for (let i = 1; i <= 5; i++) {
@@ -45,7 +54,7 @@ export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
           {renderStars()}
           <Text fontSize="8px" color="blue.900">
             {" "}
-            {postedOn} via Google
+            {formattedPostedOn} via Google
           </Text>
         </Box>
       </Box>

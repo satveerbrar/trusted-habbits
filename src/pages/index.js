@@ -105,7 +105,7 @@ const Home = ({ reviewsData }) => {
 
 export async function getStaticProps() {
   const reviewsData = await getReviews()
-  console.log(reviewsData)
+
   return {
     props: {
       reviewsData: reviewsData,
