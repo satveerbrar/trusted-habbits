@@ -7,7 +7,7 @@ import { Footer } from "@/src//components/Footer"
 import { globalPageStyles } from "@/src/utils/staticData"
 import { ChooseUs } from "@/src/components/ChooseUs"
 import { ReviewsSection } from "../components/ReviewsSection"
-import { tempReviewsData } from "../utils/temporary"
+import { getReviews } from "../controllers/reviews"
 
 const Home = ({ reviewsData }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -104,9 +104,8 @@ const Home = ({ reviewsData }) => {
 }
 
 export async function getStaticProps() {
-  // Replace tempReviewsData with fetch from database in future
-  const reviewsData = tempReviewsData
-  console.log(tempReviewsData)
+  const reviewsData = await getReviews()
+  console.log(reviewsData)
   return {
     props: {
       reviewsData: reviewsData,
