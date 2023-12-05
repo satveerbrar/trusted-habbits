@@ -4,8 +4,6 @@ import {
   Heading,
   Image,
   Flex,
-  Grid,
-  GridItem,
   Text,
   HStack,
   Link,
@@ -15,14 +13,14 @@ import {
 
 import { FaEye } from "react-icons/fa"
 
-import { Navbar } from "@/components/Navbar"
-import { CommonButton } from "@/components/CommonButton"
-import { BlackSection } from "@/components/BlackSection"
-import { Footer } from "@/components/Footer"
-import { InfoCard } from "@/components/InfoCard"
-import { Review } from "@/components/Review"
-import { chooseUsInfo, globalPageStyles } from "@/utils/staticData"
-import { tempReviewsData } from "@/utils/temporary"
+import { Navbar } from "@/src/components/Navbar"
+import { CommonButton } from "@/src/components/CommonButton"
+import { BlackSection } from "@/src/components/BlackSection"
+import { Footer } from "@/src//components/Footer"
+import { Review } from "@/src/components/Review"
+import { globalPageStyles } from "@/src/utils/staticData"
+import { tempReviewsData } from "@/src/utils/temporary"
+import { ChooseUs } from "@/src/components/ChooseUs"
 
 const Home = ({ reviewsData }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -79,41 +77,7 @@ const Home = ({ reviewsData }) => {
       <BlackSection cardCount={4} globalPageStyles={globalPageStyles} />
 
       {/* Choose us Section */}
-      <Box bg="white">
-        <Box
-          mx={mx}
-          maxW={{ base: maxWbase, lg: maxWlg }}
-          w={w}
-          mt="180px"
-          mb="20px"
-        >
-          <Heading
-            as="h2"
-            fontSize="40px"
-            align="center"
-            marginY="30px"
-            fontWeight="600"
-            color="black"
-          >
-            Why Choose Us
-          </Heading>
-          <Grid
-            templateColumns={{
-              base: "repeat(6, 1fr)",
-              md: "repeat(2, 1fr)",
-              lg: "repeat(3, 1fr)",
-            }}
-            gap={4}
-          >
-            {chooseUsInfo.map((info) => (
-              <GridItem key={info.number} colSpan={{ base: 6, md: 1, lg: 1 }}>
-                <InfoCard {...info} />
-              </GridItem>
-            ))}
-          </Grid>
-        </Box>
-      </Box>
-
+      <ChooseUs />
       {/* Try sample section */}
       <Box bg="black">
         <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w} my="80px">

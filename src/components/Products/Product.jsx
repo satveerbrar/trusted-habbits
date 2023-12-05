@@ -9,7 +9,7 @@ export const Product = ({
   discountedPrice,
 }) => {
   return (
-    <Link href={`/product/${_id}`} style={{ textDecoration: "none" }}>
+    <Link href={`/products/${_id}`} style={{ textDecoration: "none" }}>
       <Box
         bg="white"
         width={{ base: "300px", md: "280px", lg: "320px" }}

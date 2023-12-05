@@ -3,9 +3,9 @@ import { useRouter } from "next/router"
 import { signOut, useSession } from "next-auth/react"
 
 import { Flex, Link, HStack, Spacer, Icon, Box, VStack } from "@chakra-ui/react"
-import { CommonButton } from "@/components/CommonButton"
+import { CommonButton } from "../CommonButton"
 import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa"
-import { Logo } from "./Logo"
+import { Logo } from "../Logo"
 
 export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
   const router = useRouter()
@@ -60,7 +60,7 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
           spacing={4}
           p={4}
         >
-          <Link href="/home">Home</Link>
+          <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/products">Products</Link>
           <Link href="/contact">Contact</Link>
@@ -77,7 +77,7 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
         fontSize="18px"
         fontWeight="medium"
       >
-        <Link href="/home">Home</Link>
+        <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/products">Products</Link>
         <Link href="/contact">Contact</Link>

@@ -1,10 +1,10 @@
 import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react"
 
-import { Navbar } from "@/components/Navbar"
-import { Footer } from "@/components/Footer"
-import { TeamMemberCard } from "@/components/TeamMemberCard"
-import { globalPageStyles } from "@/utils/staticData"
-import { teamMemberInfo } from "@/utils/staticData"
+import { Navbar } from "@/src/components/Navbar"
+import { Footer } from "@/src/components/Footer"
+import { TeamMemberCard } from "@/src/components/TeamMemberCard"
+import { globalPageStyles } from "@/src/utils/staticData"
+import { teamMemberInfo } from "@/src/utils/staticData"
 
 const About = () => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles

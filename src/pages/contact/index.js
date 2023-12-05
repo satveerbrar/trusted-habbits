@@ -16,12 +16,12 @@ import {
 
 import { FaWhatsapp } from "react-icons/fa"
 
-import { globalPageStyles } from "@/utils/staticData"
-import { Navbar } from "@/components/Navbar"
-import { Footer } from "@/components/Footer"
-import { CommonButton } from "@/components/CommonButton"
-import { faqData } from "@/utils/staticData"
-import { contactInfo } from "@/utils/staticData"
+import { globalPageStyles } from "@/src/utils/staticData"
+import { Navbar } from "@/src/components/Navbar"
+import { Footer } from "@/src/components/Footer"
+import { CommonButton } from "@/src/components/CommonButton"
+import { faqData } from "@/src/utils/staticData"
+import { contactInfo } from "@/src/utils/staticData"
 
 const Contact = () => {
   const handleSubmit = (e) => {

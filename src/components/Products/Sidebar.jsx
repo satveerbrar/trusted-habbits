@@ -21,7 +21,7 @@ import {
   styles,
   seasons,
   usages,
-} from "@/utils/staticData"
+} from "@/src/utils/staticData"
 
 export const Sidebar = () => {
   const [selectedCategories, setSelectedCategories] = React.useState([])

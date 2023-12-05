@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-import connectToDatabase from "@/utils/dbConnect"
-import User from "@/models/user"
+import connectToDatabase from "@/src/utils/dbConnect"
+import User from "@/src/models/user"
 
 connectToDatabase()
 

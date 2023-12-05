@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react"
-import { brandColors } from "@/utils/staticData"
+import { brandColors } from "@/src/utils/staticData"
 
 export const CommonButton = ({ text, ...rest }) => {
   return (
