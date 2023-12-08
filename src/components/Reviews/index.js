@@ -6,7 +6,7 @@ import { DetailedReview } from "./DetailedReview"
 import { renderStars } from "@/src/controllers/util"
 
 export const Reviews = ({ reviewsData }) => {
-  const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
+  const { mx, maxWbase, maxWlg, w } = globalPageStyles
   // Calculate overall rating and star distribution
   const overallRating =
     reviewsData.reduce((sum, review) => sum + review.rating, 0) /
@@ -24,6 +24,7 @@ export const Reviews = ({ reviewsData }) => {
         maxW={{ base: maxWbase, lg: maxWlg }}
         w={w}
         display="flex"
+        flexDirection={{ base: "column", md: "row" }}
         mt="40px"
       >
         <Box>
@@ -89,7 +90,7 @@ export const Reviews = ({ reviewsData }) => {
             w="260px"
           />
         </Box>
-        <Box ml="80px">
+        <Box ml={{ base: "0px", md: "80px" }} mt={{ base: "20px", md: "0px" }}>
           <VStack align="start">
             {reviewsData.map((review) => (
               <DetailedReview
