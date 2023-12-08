@@ -88,7 +88,7 @@ export const Sidebar = () => {
         p={isOpen ? "30px" : "0px"}
         bg="white"
         width={isOpen ? "250px" : "0px"}
-        boxShadow="lg"
+        // boxShadow="lg"
         borderRadius="md"
         position={{ base: "absolute", md: "relative" }}
         top="0px"
