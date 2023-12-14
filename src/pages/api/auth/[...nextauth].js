@@ -42,5 +42,13 @@ export default NextAuth({
       const { baseUrl: providedBaseUrl } = urlObject
       return providedBaseUrl
     },
+    async session({ session }) {
+      const user = await User.findOne({
+        email: session.user.email,
+      })
+      session.user.id = user._id
+
+      return session
+    },
   },
 })
