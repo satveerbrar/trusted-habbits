@@ -1,9 +1,9 @@
 import { Box, Heading, Text, VStack } from "@chakra-ui/react"
 
 import { globalPageStyles } from "@/src/utils/staticData"
-import { CommonButton } from "../CommonButton"
 import { DetailedReview } from "./DetailedReview"
 import { renderStars } from "@/src/controllers/util"
+import { PostReview } from "../PostReview"
 
 export const Reviews = ({ reviewsData }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -78,17 +78,7 @@ export const Reviews = ({ reviewsData }) => {
               </Box>
             ))}
           </Box>
-          <Heading fontSize="xl" fontWeight="bold" mt="20px">
-            Share your experience
-          </Heading>
-          <CommonButton
-            text="Write a review"
-            fontSize="md"
-            borderRadius="md"
-            mt="10px"
-            h="40px"
-            w="260px"
-          />
+          <PostReview />
         </Box>
         <Box ml={{ base: "0px", md: "80px" }} mt={{ base: "20px", md: "0px" }}>
           <VStack align="start">
