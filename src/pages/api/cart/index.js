@@ -2,10 +2,10 @@ import connectToDatabase from "@/src/utils/dbConnect"
 import Cart from "@/src/models/cart"
 
 export default async function handler(req, res) {
-  const { method, body } = req
+  const { method, query } = req
   if (method == "GET") {
     await connectToDatabase()
-    const cartData = await Cart.findOne({ user: body.user })
+    const cartData = await Cart.findOne({ user: query.userId })
     return res.status(200).json(cartData)
   } else if (method == "POST") {
     await connectToDatabase()
