@@ -14,12 +14,34 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react"
 
+import { useState } from "react"
 import { globalPageStyles } from "@/src/utils/staticData"
 import { ImageSlider } from "./ImageSlider"
 import { CommonButton } from "../CommonButton"
+import { useSession } from "next-auth/react"
+import { addItemToCart } from "@/src/controllers/cart"
 
 export const DetailedProduct = ({ product }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
+  const { data: session } = useSession()
+  const [quantity, setQuantity] = useState(1)
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity)
+  }
+  const addtoCart = async () => {
+    const cartData = {
+      user: session.user.id,
+      items: [
+        {
+          product: product,
+          quantity: quantity,
+        },
+      ],
+    }
+    const response = await addItemToCart(cartData)
+    alert("Item added to cart")
+  }
+
   return (
     <Flex bg="white">
       <Box mx={mx} maxW={{ base: maxWbase, lg: maxWlg }} w={w}>
@@ -50,6 +72,7 @@ export const DetailedProduct = ({ product }) => {
               max={200}
               width="80px"
               mb="20px"
+              onChange={handleQuantityChange}
             >
               <NumberInputField />
               <NumberInputStepper>
@@ -63,6 +86,7 @@ export const DetailedProduct = ({ product }) => {
               fontSize="sm"
               borderRadius="md"
               mb="10px"
+              onClick={addtoCart}
             />
             <Divider orientation="horizontal" borderColor="black" w="100%" />
             <Heading as="h2" size="sm" my="20px">

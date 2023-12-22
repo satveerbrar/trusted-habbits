@@ -2,7 +2,7 @@ import connectToDatabase from "@/src/utils/dbConnect"
 import Cart from "@/src/models/cart"
 
 export default async function handler(req, res) {
-  const { method, query } = req
+  const { method, query, body } = req
   if (method == "GET") {
     await connectToDatabase()
     const cartData = await Cart.findOne({ user: query.userId }).populate(
