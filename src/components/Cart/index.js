@@ -4,7 +4,7 @@ import { CartItem } from "./CartItem"
 import { globalPageStyles } from "@/src/utils/staticData"
 import { Checkout } from "./Checkout"
 
-export const Cart = ({ cartData }) => {
+export const Cart = ({ items }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
   return (
     <Box bg="white" minH="70vh">
@@ -19,7 +19,7 @@ export const Cart = ({ cartData }) => {
             justifyContent="space-between"
             width="40%"
           >
-            {cartData.map((item) => (
+            {items.map((item) => (
               <CartItem key={item.id} item={item} />
             ))}
           </Box>

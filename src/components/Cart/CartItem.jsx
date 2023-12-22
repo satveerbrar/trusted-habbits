@@ -14,7 +14,8 @@ import {
 import { CloseIcon } from "@chakra-ui/icons"
 
 export const CartItem = ({ item }) => {
-  const { name, price, size, imageUrl } = item
+  const { product, quantity } = item
+  const { name, price, size, imageSrc } = product
   return (
     <Flex
       p="15px"
@@ -25,14 +26,27 @@ export const CartItem = ({ item }) => {
       alignItems="center"
       justifyContent="space-between"
     >
-      <Image borderRadius="md" boxSize="100px" src={imageUrl} alt={name} />
+      <Image
+        borderRadius="md"
+        boxSize="100px"
+        src={`/images/${imageSrc[0]}`}
+        alt={name}
+      />
       <Box flex="1" ml={4}>
-        <Text fontWeight="bold">{name}</Text>
+        <Text fontWeight="600" fontSize="15px">
+          {name}
+        </Text>
         <Text fontWeight="semibold">{price}</Text>
         <Text fontSize="sm">Size: {size}</Text>
       </Box>
       <Flex direction="row" align="center">
-        <NumberInput defaultValue={1} min={1} max={200} width="80px" mr="10px">
+        <NumberInput
+          defaultValue={quantity}
+          min={1}
+          max={200}
+          width="80px"
+          mr="10px"
+        >
           <NumberInputField />
           <NumberInputStepper>
             <NumberIncrementStepper />
