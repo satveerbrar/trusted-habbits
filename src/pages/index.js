@@ -9,7 +9,7 @@ import { ChooseUs } from "@/src/components/ChooseUs"
 import { ReviewsSection } from "../components/ReviewsSection"
 import { getReviews } from "../controllers/reviews"
 
-const Home = ({ reviewsData }) => {
+const Home = ({ reviewsData, error }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
 
   return (
@@ -94,7 +94,8 @@ const Home = ({ reviewsData }) => {
       </Box>
 
       {/* Reviews Section */}
-      <ReviewsSection reviewsData={reviewsData} />
+      {error ? <></> : <ReviewsSection reviewsData={reviewsData} />}
+
       {/* Footer Section */}
       <Box as="footer">
         <Footer />
@@ -104,12 +105,22 @@ const Home = ({ reviewsData }) => {
 }
 
 export async function getStaticProps() {
-  const reviewsData = await getReviews()
+  try {
+    const reviewsData = await getReviews()
 
-  return {
-    props: {
-      reviewsData: reviewsData,
-    },
+    return {
+      props: {
+        reviewsData: reviewsData,
+      },
+    }
+  } catch (error) {
+    console.error("Failed to fetch reviews:", error)
+    return {
+      props: {
+        reviewsData: [],
+        error: "Failed to load reviews.",
+      },
+    }
   }
 }
 
