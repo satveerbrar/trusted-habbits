@@ -4,6 +4,7 @@ import { Footer } from "@/src/components/Footer"
 import { getReviews } from "@/src/controllers/reviews"
 import { globalPageStyles } from "@/src/utils/staticData"
 import { Reviews } from "@/src/components/Reviews"
+import { ErrorText } from "@/src/components/ErrorText"
 
 const reviews = ({ reviewsData, error }) => {
   const { bg } = globalPageStyles
@@ -13,9 +14,7 @@ const reviews = ({ reviewsData, error }) => {
       <Navbar {...globalPageStyles} />
       <Divider orientation="horizontal" borderColor="black" w="100%" />
       {error ? (
-        <Box pt="20" textAlign="center" minH="65vh" bg="white">
-          <Text color="red.500">Sorry failed to load reviews page.</Text>
-        </Box>
+        <ErrorText error={error} />
       ) : (
         <Reviews reviewsData={reviewsData} />
       )}
@@ -38,7 +37,7 @@ export async function getStaticProps() {
     return {
       props: {
         reviewsData: [],
-        error: "Failed to load reviews.",
+        error: "Sorry server down please check back later",
       },
     }
   }
