@@ -20,6 +20,7 @@ import { ImageSlider } from "./ImageSlider"
 import { CommonButton } from "../CommonButton"
 import { useSession } from "next-auth/react"
 import { addItemToCart } from "@/src/controllers/cart"
+import PropTypes from "prop-types"
 
 export const DetailedProduct = ({ product }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -38,6 +39,7 @@ export const DetailedProduct = ({ product }) => {
         },
       ],
     }
+    console.log(cartData)
     const response = await addItemToCart(cartData)
     alert("Item added to cart")
   }
@@ -104,4 +106,14 @@ export const DetailedProduct = ({ product }) => {
       </Box>
     </Flex>
   )
+}
+
+DetailedProduct.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    discountedPrice: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    imageSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 }

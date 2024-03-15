@@ -12,6 +12,7 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react"
 import { CloseIcon } from "@chakra-ui/icons"
+import PropTypes from "prop-types"
 
 export const CartItem = ({ item }) => {
   const { product, quantity } = item
@@ -57,4 +58,16 @@ export const CartItem = ({ item }) => {
       </Flex>
     </Flex>
   )
+}
+
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    product: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      size: PropTypes.string.isRequired,
+      imageSrc: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    }).isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
 }

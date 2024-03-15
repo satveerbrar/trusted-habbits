@@ -1,5 +1,6 @@
 import { Box, Text, Avatar } from "@chakra-ui/react"
 import { renderStars } from "@/src/controllers/util"
+import PropTypes from "prop-types"
 
 export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
   const originalPostedOn = new Date(postedOn)
@@ -47,4 +48,12 @@ export const Review = ({ name, rating, comment, avatarUrl, postedOn }) => {
       </Box>
     </Box>
   )
+}
+
+Review.propTypes = {
+  name: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  comment: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
+  postedOn: PropTypes.string.isRequired,
 }
