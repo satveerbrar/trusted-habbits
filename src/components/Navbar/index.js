@@ -24,6 +24,9 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
   const handleLogoutClick = async () => {
     await signOut()
   }
+  const handleCartClick = () => {
+    router.push("/cart")
+  }
 
   return (
     <Flex
@@ -108,7 +111,12 @@ export const Navbar = ({ bg, mx, maxWbase, maxWlg, w }) => {
       )}
 
       <HStack display={{ base: "none", md: "block" }} spacing={2}>
-        <Icon as={FaShoppingCart} boxSize={6} />
+        <Icon
+          as={FaShoppingCart}
+          boxSize={6}
+          cursor="pointer"
+          onClick={handleCartClick}
+        />
       </HStack>
     </Flex>
   )

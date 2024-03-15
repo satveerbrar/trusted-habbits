@@ -8,9 +8,14 @@ import { globalPageStyles } from "@/src/utils/staticData"
 import { ChooseUs } from "@/src/components/ChooseUs"
 import { ReviewsSection } from "../components/ReviewsSection"
 import { getReviews } from "../controllers/reviews"
+import { useRouter } from "next/router"
 
 const Home = ({ reviewsData, error }) => {
   const { bg, mx, maxWbase, maxWlg, w } = globalPageStyles
+  const router = useRouter()
+  const handleShopNowClick = () => {
+    router.push("/products")
+  }
 
   return (
     <Flex direction="column" bg={bg} height="auto">
@@ -47,6 +52,7 @@ const Home = ({ reviewsData, error }) => {
             fontSize={{ base: "20px", sm: "20px", md: "25px", lg: "32px" }} // Reduced font size for tablet view
             boxShadow="4px 4px 4px rgba(0, 0, 0, 1)"
             mt={{ base: "25px", sm: "25px", md: "30px", lg: "35px" }}
+            onClick={handleShopNowClick}
           />
         </Flex>
         <Box display={{ base: "none", md: "block" }}>
