@@ -4,6 +4,7 @@ import { globalPageStyles } from "@/src/utils/staticData"
 import { DetailedReview } from "./DetailedReview"
 import { renderStars } from "@/src/controllers/util"
 import { PostReview } from "../PostReview"
+import PropTypes from "prop-types"
 
 export const Reviews = ({ reviewsData }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -97,4 +98,19 @@ export const Reviews = ({ reviewsData }) => {
       </Box>
     </Box>
   )
+}
+
+Reviews.propTypes = {
+  reviewsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      user: PropTypes.shape({
+        firstName: PropTypes.string.isRequired,
+        lastName: PropTypes.string.isRequired,
+      }).isRequired,
+      rating: PropTypes.number.isRequired,
+      comment: PropTypes.string.isRequired,
+      postedOn: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 }

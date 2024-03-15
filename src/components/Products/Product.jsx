@@ -1,4 +1,5 @@
 import { Box, Image, Heading, Text, Link } from "@chakra-ui/react"
+import PropTypes from "prop-types"
 
 export const Product = ({
   _id,
@@ -59,4 +60,13 @@ export const Product = ({
       </Box>
     </Link>
   )
+}
+
+Product.propTypes = {
+  _id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  imageSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.arrayOf(PropTypes.string).isRequired,
+  discountedPrice: PropTypes.number.isRequired,
 }
