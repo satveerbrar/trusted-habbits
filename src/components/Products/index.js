@@ -2,6 +2,7 @@ import { Flex, Box } from "@chakra-ui/react"
 import { globalPageStyles } from "@/src/utils/staticData"
 import { Product } from "./Product"
 import { Sidebar } from "./Sidebar"
+import PropTypes from "prop-types"
 
 export const Products = ({ productsData }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -34,4 +35,17 @@ export const Products = ({ productsData }) => {
       </Box>
     </Flex>
   )
+}
+
+Products.propTypes = {
+  productsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      imageSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
+      price: PropTypes.number.isRequired,
+      description: PropTypes.arrayOf(PropTypes.string).isRequired,
+      discountedPrice: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 }
