@@ -11,6 +11,7 @@ import { FaEye } from "react-icons/fa"
 
 import { globalPageStyles } from "@/src/utils/staticData"
 import { Review } from "./Review"
+import PropTypes from "prop-types"
 
 export const ReviewsSection = ({ reviewsData }) => {
   const { mx, maxWbase, maxWlg, w } = globalPageStyles
@@ -58,4 +59,16 @@ export const ReviewsSection = ({ reviewsData }) => {
       </Box>
     </Box>
   )
+}
+
+ReviewsSection.propTypes = {
+  reviewsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      comment: PropTypes.string.isRequired,
+      avatarUrl: PropTypes.string.isRequired,
+      postedOn: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 }

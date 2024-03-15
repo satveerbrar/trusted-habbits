@@ -1,5 +1,6 @@
 import { Box, Text, Icon, Avatar, Flex } from "@chakra-ui/react"
 import { FaStar, FaThumbsUp, FaThumbsDown } from "react-icons/fa"
+import PropTypes from "prop-types"
 
 export const DetailedReview = ({
   name,
@@ -78,4 +79,12 @@ export const DetailedReview = ({
       </Flex>
     </Box>
   )
+}
+
+DetailedReview.propTypes = {
+  name: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  comment: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
+  postedOn: PropTypes.string.isRequired,
 }
